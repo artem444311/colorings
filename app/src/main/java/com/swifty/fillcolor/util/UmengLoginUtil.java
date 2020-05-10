@@ -5,15 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.swifty.fillcolor.MyApplication;
 import com.swifty.fillcolor.broadcast.LoginSuccessBroadcast;
 import com.swifty.fillcolor.broadcast.LogoutSuccessBroadcast;
-import com.swifty.fillcolor.controller.main.ThemeListFragment;
 import com.swifty.fillcolor.controller.main.UserFragment;
 import com.swifty.fillcolor.factory.MyDialogFactory;
 import com.swifty.fillcolor.factory.SharedPreferencesFactory;
@@ -33,7 +30,6 @@ import com.umeng.socialize.sso.UMSsoHandler;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

@@ -1,6 +1,10 @@
 package com.swifty.fillcolor.util;
 
-import android.support.v7.widget.RecyclerView;
+
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.swifty.fillcolor.controller.main.CacheImageAdapter;
 
 import jp.wasabeef.recyclerview.animators.adapters.AlphaInAnimationAdapter;
 import jp.wasabeef.recyclerview.animators.adapters.ScaleInAnimationAdapter;
@@ -10,7 +14,7 @@ import jp.wasabeef.recyclerview.animators.adapters.ScaleInAnimationAdapter;
  */
 public class ListAnimationUtil {
 
-    public static RecyclerView.Adapter addScaleandAlphaAnim(RecyclerView.Adapter adapter) {
+    public static RecyclerView.Adapter addScaleandAlphaAnim(CacheImageAdapter adapter) {
         AlphaInAnimationAdapter alphaAdapter = new AlphaInAnimationAdapter(adapter);
         ScaleInAnimationAdapter scaleAdapter = new ScaleInAnimationAdapter(alphaAdapter);
         return scaleAdapter;

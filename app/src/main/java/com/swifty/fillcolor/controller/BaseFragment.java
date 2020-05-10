@@ -1,7 +1,7 @@
 package com.swifty.fillcolor.controller;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
+import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 /**
  * Created by Swifty.Wang on 2015/9/2.

@@ -37,17 +37,17 @@ public class LoadListDataAsyn extends AsyncTask {
             MyHttpClient myHttpClient = new MyHttpClient();
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair(PageId, String.valueOf(page)));
-            String ret = myHttpClient.executePostRequest(MyApplication.ThemeListUrl, params);
-            Gson gson = new Gson();
-            themeList = gson.fromJson(ret, ThemeBean.class).getThemes();
-            //save to db
-            if (themeList != null) {
-                if (context != null) {
-                    FCDBModel.getInstance().insertNewThemes(context, themeList);
-                }
-            } else {
-                return "FAILED";
-            }
+//            String ret = myHttpClient.executePostRequest(MyApplication.ThemeListUrl, params);
+//            Gson gson = new Gson();
+//            themeList = gson.fromJson(ret, ThemeBean.class).getThemes();
+//            //save to db
+//            if (themeList != null) {
+//                if (context != null) {
+//                    FCDBModel.getInstance().insertNewThemes(context, themeList);
+//                }
+//            } else {
+//                return "FAILED";
+//            }
             return "SUCCESS";
         } catch (Exception e) {
             L.e(e.toString());

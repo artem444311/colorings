@@ -1,9 +1,13 @@
 package com.swifty.fillcolor.view;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.swifty.fillcolor.controller.main.CacheImageAdapter;
+import com.swifty.fillcolor.controller.main.ImageWallListAdapter;
 
 public class EmptyRecyclerView extends RecyclerView {
     private View emptyView;
@@ -44,8 +48,7 @@ public class EmptyRecyclerView extends RecyclerView {
         }
     }
 
-    @Override
-    public void setAdapter(Adapter adapter) {
+    public void setAdapter(CacheImageAdapter adapter) {
         final Adapter oldAdapter = getAdapter();
         if (oldAdapter != null) {
             oldAdapter.unregisterAdapterDataObserver(observer);

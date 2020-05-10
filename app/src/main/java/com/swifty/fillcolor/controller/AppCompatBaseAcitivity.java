@@ -1,7 +1,9 @@
 package com.swifty.fillcolor.controller;
 
-import android.support.design.widget.AppBarLayout;
-import android.support.v4.widget.SwipeRefreshLayout;
+
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import com.google.android.material.appbar.AppBarLayout;
 
 /**
  * Created by Swifty.Wang on 2015/9/2.

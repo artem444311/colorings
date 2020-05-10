@@ -23,7 +23,7 @@ import com.swifty.fillcolor.view.DragedTextView;
 import com.swifty.fillcolor.view.ImageButton_define;
 import com.swifty.fillcolor.view.MyProgressDialog;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -32,27 +32,27 @@ import butterknife.ButterKnife;
 public class AdvancePaintActivity extends BaseActivity {
 
     public static int Offest = MyApplication.screenWidth / 40;
-    @Bind(R.id.addwords)
+    @BindView(R.id.addwords)
     ImageButton_define addwords;
-    @Bind(R.id.addvoice)
+    @BindView(R.id.addvoice)
     Button addvoice;
-    @Bind(R.id.current_image)
+    @BindView(R.id.current_image)
     ImageView currentImage;
-    @Bind(R.id.share)
+    @BindView(R.id.share)
     ImageButton_define share;
-    @Bind(R.id.repaint)
+    @BindView(R.id.repaint)
     ImageButton_define repaint;
-    @Bind(R.id.paintview)
+    @BindView(R.id.paintview)
     FrameLayout paintview;
     String imageUri;
     MyDialogFactory myDialogFactory;
-    @Bind(R.id.addborder)
+    @BindView(R.id.addborder)
     ImageButton_define addborder;
-    @Bind(R.id.border)
+    @BindView(R.id.border)
     ImageView border;
-    @Bind(R.id.cloudgallery)
+    @BindView(R.id.cloudgallery)
     ImageButton_define cloudgallery;
-    @Bind(R.id.cancel)
+    @BindView(R.id.cancel)
     Button cancel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

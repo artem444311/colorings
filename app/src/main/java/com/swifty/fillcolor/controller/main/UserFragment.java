@@ -2,10 +2,11 @@ package com.swifty.fillcolor.controller.main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -15,10 +16,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.swifty.fillcolor.MyApplication;
-import com.swifty.fillcolor.broadcast.LoginSuccessBroadcast;
 import com.swifty.fillcolor.factory.MyDialogFactory;
-import com.swifty.fillcolor.factory.SharedPreferencesFactory;
 import com.swifty.fillcolor.listener.OnLoadCacheImageListener;
 import com.swifty.fillcolor.listener.OnLoadUserPaintListener;
 import com.swifty.fillcolor.listener.OnLoginSuccessListener;
@@ -36,7 +34,7 @@ import com.swifty.fillcolor.view.EmptyRecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -44,21 +42,21 @@ import butterknife.ButterKnife;
  */
 public class UserFragment extends BaseFragment implements OnLoginSuccessListener {
     private static UserFragment fragment;
-    @Bind(R.id.userpaintlist)
+    @BindView(R.id.userpaintlist)
     EmptyRecyclerView userpaintlist;
-    @Bind(R.id.swiperefresh)
+    @BindView(R.id.swiperefresh)
     SwipeRefreshLayout refreshLayout;
-    RecyclerView.Adapter adapter;
-    @Bind(R.id.emptylay_paintlist)
+    CacheImageAdapter adapter;
+    @BindView(R.id.emptylay_paintlist)
     LinearLayout emptylayPaintlist;
     List<LocalImageBean> localImageBeans;
-    @Bind(R.id.tab_imagecache)
+    @BindView(R.id.tab_imagecache)
     RadioButton tabImagecache;
-    @Bind(R.id.tab_local)
+    @BindView(R.id.tab_local)
     RadioButton tabLocal;
-    @Bind(R.id.tab_cloud)
+    @BindView(R.id.tab_cloud)
     RadioButton tabCloud;
-    @Bind(R.id.usertabs)
+    @BindView(R.id.usertabs)
     RadioGroup usertabs;
 
     MyDialogFactory myDialogFactory;
@@ -107,7 +105,7 @@ public class UserFragment extends BaseFragment implements OnLoginSuccessListener
                         public void loadUserPaintFinished(List<LocalImageBean> list) {
                             if (list != null) {
                                 localImageBeans = list;
-                                adapter = new LocalPaintAdapter(getActivity(), localImageBeans);
+//                                adapter = new LocalPaintAdapter(getActivity(), localImageBeans);
                                 userpaintlist.setAdapter(ListAnimationUtil.addScaleandAlphaAnim(adapter));
                             }
                             refreshLayout.setRefreshing(false);
@@ -190,8 +188,8 @@ public class UserFragment extends BaseFragment implements OnLoginSuccessListener
             @Override
             public void loadUserPaintFinished(List<LocalImageBean> list) {
                 if (list != null) {
-                    adapter = new LocalPaintAdapter(getActivity(), list);
-                    userpaintlist.setAdapter(adapter);
+//                    adapter = new LocalPaintAdapter(getActivity(), list);
+//                    userpaintlist.setAdapter(adapter);
                 }
             }
         };
@@ -206,11 +204,11 @@ public class UserFragment extends BaseFragment implements OnLoginSuccessListener
         //awlays refreshlist when resume
         if (isAdded()) {
             if (tabLocal.isChecked()) {
-                if (adapter != null)
-                    adapter.notifyDataSetChanged();
+//                if (adapter != null)
+//                    adapter.notifyDataSetChanged();
             } else {
-                if (adapter != null)
-                    adapter.notifyDataSetChanged();
+//                if (adapter != null)
+//                    adapter.notifyDataSetChanged();
             }
         }
     }
@@ -218,7 +216,6 @@ public class UserFragment extends BaseFragment implements OnLoginSuccessListener
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     @Override

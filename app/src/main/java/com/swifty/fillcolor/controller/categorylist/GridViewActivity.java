@@ -2,9 +2,10 @@ package com.swifty.fillcolor.controller.categorylist;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
+
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -173,7 +174,7 @@ public class GridViewActivity extends BaseActivity {
                 }
             }
         });
-        gridView.setAdapter(ListAnimationUtil.addScaleandAlphaAnim(gridViewAdapter));
+//        gridView.setAdapter(ListAnimationUtil.addScaleandAlphaAnim(gridViewAdapter));
     }
 
     @Override
